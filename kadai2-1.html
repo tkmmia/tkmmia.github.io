@@ -46,7 +46,7 @@ scene.add(box);
 　var sphereGeometry = new THREE.SphereGeometry( 0.5, 32, 32 ); 
   //半径、垂直方向の分割数、水平方向の分割数
   //var sphereMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00, wireframe: true } );
-  ///var sphere = new THREE.Mesh( sphereGeometry, mat );
+  var sphere = new THREE.Mesh( sphereGeometry, mat );
   sphere.position.set( 2, 0, -5 );
   sphere.rotation.x = 0.2;
   scene.add( sphere );
@@ -55,7 +55,7 @@ scene.add(box);
 var coneGeometry = new THREE.ConeGeometry( 0.5, 1, 4 ); 
     //半径、高さ、底面の分割数
     //var coneMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
-    //var cone = new THREE.Mesh( coneGeometry, coneMaterial );
+    var cone = new THREE.Mesh( coneGeometry, mat );
     cone.position.set( -2, 0, -5 );
     scene.add( cone );  
 
