@@ -43,7 +43,7 @@ box.position.z = -5;
 scene.add(box);
 
 // 球を作成
-　var sphereGeometry = new THREE.SphereGeometry( 0.8, 32, 32 ); 
+　var sphereGeometry = new THREE.SphereGeometry( 0.5, 32, 32 ); 
   //半径、垂直方向の分割数、水平方向の分割数
   //var sphereMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00, wireframe: true } );
   var sphere = new THREE.Mesh( sphereGeometry, mat );
@@ -51,6 +51,13 @@ scene.add(box);
   sphere.rotation.x = 0.2;
   scene.add( sphere );
 
+//角すい〜円すい
+var coneGeometry = new THREE.ConeGeometry( 0.5, 1, 1 ); 
+    //半径、高さ、底面の分割数
+    var coneMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff} );
+    var cone = new THREE.Mesh( coneGeometry, coneMaterial );
+    cone.position.set( -2, 0, -5 );
+    scene.add( cone );  
 
 // 平行光源
 var directionalLight1 = new THREE.DirectionalLight(0xffffff);
@@ -78,6 +85,10 @@ var update = function() {
 
   // 球を回転させる
   sphere.rotation.y += 0.01;
+
+  // 角すいを回転させる
+  cone.rotation.x -= 0.01;
+  cone.rotation.y -= 0.01;
 
   renderer.render(scene, camera);
 };
