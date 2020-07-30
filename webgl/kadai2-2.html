@@ -32,12 +32,12 @@
 
             // テクスチャー読み込み
             var textureLoader = new THREE.TextureLoader();
-            var texture = textureLoader.load("stone.jpg");
+            var texture = textureLoader.load("/image/stone.jpg");
             var mat = new THREE.MeshPhongMaterial();
             mat.map = texture;
 
             // バンプマップ読み込み
-            var bump = textureLoader.load("stone-bump.jpg");
+            var bump = textureLoader.load("/image/stone-bump.jpg");
             mat.bumpMap = bump;
             mat.bumpscale = 0.2;
 
