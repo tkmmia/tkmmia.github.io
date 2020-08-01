@@ -97,6 +97,7 @@
 
             // 毎フレーム時に実行されるループイベントです
             function tick() {
+                requestAnimationFrame(tick);
                 /*
 
                 if (oc == 1) {
@@ -117,7 +118,7 @@
 
                 // レンダリング
                 renderer.render(scene, camera);
-                requestAnimationFrame(tick);
+
             }
         }
     </script>
