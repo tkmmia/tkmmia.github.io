@@ -113,10 +113,10 @@
 
 
             //球
-            const sphereGeometry = new THREE.SphereGeometry(150, 12, 12);
+            const sphereGeometry = new THREE.SphereGeometry(300, 12, 12);
             //半径、垂直方向の分割数、水平方向の分割数
             const textureLoader = new THREE.TextureLoader();
-            const erathtexture = textureLoader.load("/image/9814.jpg");
+            const erathtexture = textureLoader.load("/image/9775.jpg");
             const sphereMaterial = new THREE.MeshPhongMaterial();
             sphereMaterial.map = erathtexture;
             const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
@@ -151,9 +151,9 @@
                     sp1();
                     count = 0;
                 }
-                count += 1;
+                count += 0.1;
                 pyp++;
-                pym -= 0.5;
+                pym -= 0.1;
 
                 // レンダリング
                 renderer.render(scene, camera);
