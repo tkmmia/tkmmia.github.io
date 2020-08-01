@@ -54,7 +54,7 @@
             // フォグ（霞）を有効にする
             material2.fog = true;
             pc();
-            var oc;
+            var oc = 1;;
 
             // ビルボードを作成
             ///for (let i = 0; i < 50; i++) {
@@ -78,7 +78,7 @@
 
                 //scene.add(sprite);
                 scene.add(sprite2);
-                oc = 1;
+
             }
             ///}
 
@@ -154,7 +154,6 @@
                     material2.opacity -= 0.001;
                     if (material2.opacity <= 0) {
                         oc = 0;
-                        break;
                     }
                 } else {
                     material2.opacity += 0.001;
