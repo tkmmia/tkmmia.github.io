@@ -36,10 +36,10 @@
             controls.autoRotate = true;
 
             // helper
-            //const gridHelper = new THREE.GridHelper(1000, 20); // size, step
-            //scene.add(gridHelper);
-            //const axisHelper = new THREE.AxisHelper(1000); //軸の長さ　X：赤、Y：緑、z：青
-            //scene.add(axisHelper);
+            const gridHelper = new THREE.GridHelper(1000, 20); // size, step
+            scene.add(gridHelper);
+            const axisHelper = new THREE.AxisHelper(1000); //軸の長さ　X：赤、Y：緑、z：青
+            scene.add(axisHelper);
 
             // マテリアルを作成する
             ///const material = new THREE.SpriteMaterial({
@@ -69,7 +69,7 @@
                 ///sprite.position.z = 1000 * (Math.random() - 0.5);
 
                 sprite2.position.x = 1000 * (Math.random() - 0.5);
-                sprite2.position.y = 300 * (Math.random() - 300);
+                sprite2.position.y = 300 * (Math.random() - 150);
                 //sprite.position.y = 300 * Math.random() - 150;
                 sprite2.position.z = 1000 * (Math.random() - 0.5);
 
