@@ -65,28 +65,6 @@
             sunplane.position.set(0, 250, 0);
             scene.add(sunplane);
 
-            // マテリアルを作成する
-            const material = new THREE.SpriteMaterial({
-                map: new THREE.TextureLoader().load('/image/heart_r.png')
-            });
-            // フォグ（霞）を有効にする
-            material.fog = true;
-
-            // ビルボードを作成
-            for (let i = 0; i < 100; i++) {
-                const sprite = new THREE.Sprite(material);
-                // ランダムな座標に配置
-                sprite.position.x = 1000 * (Math.random() - 0.5);
-                sprite.position.y = 300 * Math.random() - 150;
-                sprite.position.z = 1000 * (Math.random() - 0.5);
-                // 必要に応じてスケールを調整
-                sprite.scale.set(50, 50, 50);
-
-                scene.add(sprite);
-            }
-
-
-
             // starグループ
             var stargroup = new THREE.Group();
             scene.add(stargroup);
