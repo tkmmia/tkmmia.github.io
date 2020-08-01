@@ -64,13 +64,13 @@
 
             // マテリアル2を作成する
             const material2 = new THREE.SpriteMaterial({
-                map: new THREE.TextureLoader().load('/image/heart_r.png')
+                map: new THREE.TextureLoader().load('/image/star.png')
             });
             // フォグ（霞）を有効にする
             material2.fog = true;
 
             // ビルボードを作成
-            for (let i = 0; i < 10; i++) {
+            for (let j = 0; j < 10; j++) {
                 const sprite2 = new THREE.Sprite(material2);
                 // ランダムな座標に配置
                 sprite2.position.x = 1000 * (Math.random() - 0.5);
