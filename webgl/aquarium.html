@@ -65,24 +65,7 @@
             sunplane.position.set(0, 250, 0);
             scene.add(sunplane);
 
-            // グループを作成
-            const group = new THREE.Group();
-            scene.add(group);
-            const geometry = new THREE.BoxGeometry(50, 50, 50);
-            //const geometry = new THREE.BoxBufferGeometry(50, 50, 50);
-            const material = new THREE.MeshStandardMaterial({});
 
-            for (let i = 0; i < 1000; i++) {
-                const mesh = new THREE.Mesh(geometry, material);
-                mesh.position.x = (Math.random() - 0.5) * 2000;
-                mesh.position.y = (Math.random() - 0.5) * 2000;
-                mesh.position.z = (Math.random() - 0.5) * 2000;
-                mesh.rotation.x = Math.random() * 2 * Math.PI;
-                mesh.rotation.y = Math.random() * 2 * Math.PI;
-                mesh.rotation.z = Math.random() * 2 * Math.PI;
-                // グループに格納する
-                group.add(mesh);
-            }
 
             // starグループ
             var stargroup = new THREE.Group();
