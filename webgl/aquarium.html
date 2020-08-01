@@ -73,12 +73,12 @@
             for (let i = 0; i < 10; i++) {
                 const sprite2 = new THREE.Sprite(material2);
                 // ランダムな座標に配置
-                sprite2.position.x = 1000 * Math.random();
+                sprite2.position.x = 1000 * (Math.random() - 0.5);
                 sprite2.position.y = 300 * Math.random();
                 //sprite.position.y = 300 * Math.random() - 150;
-                sprite.position.z = 1000 * Math.random();
+                sprite.position.z = 1000 * (Math.random() - 0.5);
                 // 必要に応じてスケールを調整
-                sprite2.scale.set(30, 30, 30);
+                sprite2.scale.set(50, 50, 50);
 
                 scene.add(sprite2);
             }
