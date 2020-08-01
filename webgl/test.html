@@ -141,14 +141,14 @@
                 new THREE.CylinderGeometry(20, 20, 80, 30),
                 bodyMaterial
             );
-            leg_r.position.set(820, -240, 0);
+            leg_r.position.set(820, -160, 0);
 
             const leg_l = new THREE.Mesh(
                 //円柱のジオメトリー(上面半径,下面半径,高さ,円周分割数)
                 new THREE.CylinderGeometry(20, 20, 80, 30),
                 bodyMaterial
             );
-            leg_l.position.set(780, -240, 0);
+            leg_l.position.set(780, -160, 0);
 
             const human = new THREE.Group(); //メッシュをグループ化
             human.add(head, body, arm_l, arm_r, leg_r, leg_l);
