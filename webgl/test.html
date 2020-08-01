@@ -145,6 +145,7 @@
                 count += 1;
                 sphere.position.y -= 0.5;
                 camera.position.y -= 0.5;
+                controls.target.set(sphere.x, sphere.y, sphere.z);
 
                 // レンダリング
                 renderer.render(scene, camera);
