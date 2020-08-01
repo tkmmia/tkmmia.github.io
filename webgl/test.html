@@ -55,7 +55,8 @@
             material2.fog = true;
             var oc = 1;
             var i = 0;
-            var py = 300;
+            var pyp = 300;
+            var pym = 150;
             pc();
 
             // ビルボードを作成
@@ -146,7 +147,8 @@
                 //material2.opacity -= 0.01;
                 //sphere.position.y += 0.01;
                 count += 1;
-                py++;
+                pyp++;
+                pym--;
                 //sphere.position.y += 0.5;
                 //camera.position.y -= 0.5;
                 //controls.target.set(sphere.x, sphere.y, 1000);
