@@ -105,6 +105,7 @@
 
             //奥行きと影があり、光沢感のないマテリアル({ color: 0xから始まる16進数カラー})
             const bodyMaterial = new THREE.MeshLambertMaterial({ color: 0xf5deb3 })
+            const bodyMaterial2 = new THREE.MeshLambertMaterial({ color: 0xdc143c })
             const clothesMaterial = new THREE.MeshLambertMaterial({ color: 0xff4500 })
 
             const head = new THREE.Mesh(
@@ -123,7 +124,8 @@
             const arm_r = new THREE.Mesh(
                 //円柱のジオメトリー(上面半径,下面半径,高さ,円周分割数)
                 new THREE.CylinderGeometry(20, 20, 80, 30),
-                bodyMaterial
+                bodyMaterial2
+
             );
             arm_r.position.set(800, -52, 0);
 
