@@ -110,7 +110,7 @@
 
                     //oc = ps();
                     //if (oc <= 0.1) {
-                    pc();
+                    //pc();
                     count = 0;
                 }
                 ps();
@@ -151,12 +151,13 @@
                 // 徐々に薄く
                 //material2.opacity = Math.random();
                 if (oc == 1) {
-                    material2.opacity -= 0.01;
+                    material2.opacity -= 0.001;
                     if (material2.opacity <= 0) {
                         oc = 0;
+                        break;
                     }
                 } else {
-                    material2.opacity += 0.01;
+                    material2.opacity += 0.001;
                     if (material2.opacity >= 1) {
                         oc = 1;
                     }
