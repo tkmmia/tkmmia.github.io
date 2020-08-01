@@ -62,27 +62,6 @@
                 scene.add(sprite);
             }
 
-            // マテリアル2を作成する
-            const material2 = new THREE.SpriteMaterial({
-                map: new THREE.TextureLoader().load('/image/star.png')
-            });
-            // フォグ（霞）を有効にする
-            material2.fog = true;
-
-            // ビルボードを作成
-            for (let j = 0; j < 10; j++) {
-                const sprite2 = new THREE.Sprite(material2);
-                // ランダムな座標に配置
-                sprite2.position.x = 1000 * (Math.random() - 0.5);
-                sprite2.position.y = 300 * Math.random();
-                //sprite.position.y = 300 * Math.random() - 150;
-                sprite.position.z = 1000 * (Math.random() - 0.5);
-                // 必要に応じてスケールを調整
-                sprite2.scale.set(50, 50, 50);
-
-                scene.add(sprite2);
-            }
-
             //球
             const sphereGeometry = new THREE.SphereGeometry(150, 32, 32);
             //半径、垂直方向の分割数、水平方向の分割数
