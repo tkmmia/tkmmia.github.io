@@ -113,10 +113,10 @@
 
 
             //球
-            const sphereGeometry = new THREE.SphereGeometry(150, 16, 16);
+            const sphereGeometry = new THREE.SphereGeometry(150, 12, 12);
             //半径、垂直方向の分割数、水平方向の分割数
             const textureLoader = new THREE.TextureLoader();
-            const erathtexture = textureLoader.load("/image/023s.jpg");
+            const erathtexture = textureLoader.load("/image/9814.jpg");
             const sphereMaterial = new THREE.MeshPhongMaterial();
             sphereMaterial.map = erathtexture;
             const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
