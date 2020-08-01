@@ -98,15 +98,20 @@
             scene.add(ambientLight);
 
             tick();
+            var count = 0;
 
             // 毎フレーム時に実行されるループイベントです
             function tick() {
 
-                oc = ps();
-                console.log(oc);
-                if (oc <= 0.1) {
+
+                ps();
+                if (count = 20) {
+                    count = 0;
+                    //oc = ps();
+                    //if (oc <= 0.1) {
                     pc();
                     //oc = 1;
+                    //}
                 }
 
 
@@ -128,7 +133,8 @@
                 //sprite2.position.y += 0.1;
                 // 徐々に薄く
                 //material2.opacity -= 0.01;
-                sphere.position.y += 0.01;
+                //sphere.position.y += 0.01;
+                couunt += 1;
 
                 // レンダリング
                 renderer.render(scene, camera);
@@ -139,7 +145,7 @@
             function ps() {
                 //sprite2.position.y += 0.1;
                 // 徐々に薄く
-                material2.opacity -= 0.01;
+                material2.opacity -= 0.1;
                 return material2.opacity;
             }
         }
