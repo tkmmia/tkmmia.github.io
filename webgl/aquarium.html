@@ -62,6 +62,27 @@
                 scene.add(sprite);
             }
 
+            // マテリアル2を作成する
+            const material = new THREE.SpriteMaterial({
+                map: new THREE.TextureLoader().load('/image/heart_r.png')
+            });
+            // フォグ（霞）を有効にする
+            material.fog = true;
+
+            // ビルボードを作成
+            for (let i = 0; i < 10; i++) {
+                const sprite2 = new THREE.Sprite(material);
+                // ランダムな座標に配置
+                sprite2.position.x = 1000 * Math.random();
+                sprite2.position.y = 300 * Math.random();
+                //sprite.position.y = 300 * Math.random() - 150;
+                sprite.position.z = 1000 * Math.random();
+                // 必要に応じてスケールを調整
+                sprite2.scale.set(30, 30, 30);
+
+                scene.add(sprite2);
+            }
+
             //球
             const sphereGeometry = new THREE.SphereGeometry(150, 32, 32);
             //半径、垂直方向の分割数、水平方向の分割数
@@ -82,7 +103,6 @@
             // 毎フレーム時に実行されるループイベントです
             function tick() {
                 // レンダリング
-                sprite.rotateY(0.01);
                 renderer.render(scene, camera);
                 requestAnimationFrame(tick);
             }
