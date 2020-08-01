@@ -33,6 +33,7 @@
 
             // カメラコントローラーを作成
             const controls = new THREE.OrbitControls(camera);
+            controls.target.set(sphere.x, sphere.y, sphere.z);
             controls.autoRotate = true;
 
             // helper
@@ -145,7 +146,7 @@
                 count += 1;
                 sphere.position.y -= 0.5;
                 camera.position.y -= 0.5;
-                controls.target.set(sphere.x, sphere.y, 1000);
+                //controls.target.set(sphere.x, sphere.y, 1000);
 
                 // レンダリング
                 renderer.render(scene, camera);
