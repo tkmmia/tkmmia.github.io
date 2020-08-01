@@ -33,7 +33,6 @@
 
             // カメラコントローラーを作成
             const controls = new THREE.OrbitControls(camera);
-            controls.target.set(sphere.x, sphere.y, sphere.z);
             controls.autoRotate = true;
 
             // helper
@@ -95,6 +94,8 @@
             sphereMaterial.map = erathtexture;
             const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
             scene.add(sphere);
+
+            controls.target.set(sphere.x, sphere.y, sphere.z);
 
             //光源はspriteのみならば不要！
             // 光源（環境光）
