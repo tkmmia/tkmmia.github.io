@@ -49,7 +49,7 @@
             material.fog = true;
 
             const material2 = new THREE.SpriteMaterial({
-                map: new THREE.TextureLoader().load('/image/heart_r.png')
+                map: new THREE.TextureLoader().load('/image/heart_r.png'), opacity: 1, transparent: true, depthTest: false
             });
             // フォグ（霞）を有効にする
             material2.fog = true;
@@ -76,6 +76,7 @@
                 scene.add(sprite);
                 scene.add(sprite2);
             }
+            var oc = 1;
 
             //球
             const sphereGeometry = new THREE.SphereGeometry(150, 32, 32);
@@ -96,6 +97,19 @@
 
             // 毎フレーム時に実行されるループイベントです
             function tick() {
+
+                if (oc == 1) {
+                    materia2.opacity -= 0.01;
+                    if (material2.opacity == 0) {
+                        oc = 0;
+                    }
+                } else {
+                    material2.opacity += 0.01;
+                    if (material2.opacity == 1) {
+                        oc = 1;
+                    }
+                }
+
                 // レンダリング
                 renderer.render(scene, camera);
                 requestAnimationFrame(tick);
