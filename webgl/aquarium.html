@@ -65,24 +65,27 @@
             sunplane.position.set(0, 250, 0);
             scene.add(sunplane);
 
-            // グループを作成
-            const group = new THREE.Group();
-            scene.add(group);
-            const geometry = new THREE.BoxGeometry(50, 50, 50);
-            //const geometry = new THREE.BoxBufferGeometry(50, 50, 50);
-            const material = new THREE.MeshStandardMaterial();
+            // マテリアルを作成する
+            const material = new THREE.SpriteMaterial({
+                map: new THREE.TextureLoader().load('/image/heart_r.png')
+            });
+            // フォグ（霞）を有効にする
+            material.fog = true;
 
-            for (let i = 0; i < 1000; i++) {
-                const mesh = new THREE.Mesh(geometry, material);
-                mesh.position.x = (Math.random() - 0.5) * 2000;
-                mesh.position.y = (Math.random() - 0.5) * 2000;
-                mesh.position.z = (Math.random() - 0.5) * 2000;
-                mesh.rotation.x = Math.random() * 2 * Math.PI;
-                mesh.rotation.y = Math.random() * 2 * Math.PI;
-                mesh.rotation.z = Math.random() * 2 * Math.PI;
-                // グループに格納する
-                group.add(mesh);
+            // ビルボードを作成
+            for (let i = 0; i < 100; i++) {
+                const sprite = new THREE.Sprite(material);
+                // ランダムな座標に配置
+                sprite.position.x = 1000 * (Math.random() - 0.5);
+                sprite.position.y = 300 * Math.random() - 150;
+                sprite.position.z = 1000 * (Math.random() - 0.5);
+                // 必要に応じてスケールを調整
+                sprite.scale.set(50, 50, 50);
+
+                scene.add(sprite);
             }
+
+
 
             // starグループ
             var stargroup = new THREE.Group();
