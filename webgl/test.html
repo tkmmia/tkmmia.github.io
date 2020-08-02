@@ -122,7 +122,7 @@
             eye_r.position.set(814, 0, 41);
 
             const eye_l = new THREE.Mesh(
-                new THREE.BoxGeometry(6, 0, 2),
+                new THREE.BoxGeometry(6, 14, 2),
                 eyeMaterial
             );
             eye_l.position.set(786, 18, 41);
@@ -198,6 +198,7 @@
 
                 sphere.rotation.x += 0.01;
                 sphere.rotation.y += 0.01;
+                human.rotateZ(0.01);
 
                 // レンダリング
                 renderer.render(scene, camera);
