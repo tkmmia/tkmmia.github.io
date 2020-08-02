@@ -108,19 +108,21 @@
             const bodyMaterial2 = new THREE.MeshLambertMaterial({ color: 0xdc143c })
             const clothesMaterial = new THREE.MeshLambertMaterial({ color: 0xff4500 })
 
+            //頭
             const head = new THREE.Mesh(
-                //球のジオメトリー（半径,緯度分割数,経度分割数）
                 new THREE.SphereGeometry(40, 32, 32),
                 bodyMaterial
             );
             head.position.set(800, 0, 0);
 
+            //身体
             const body = new THREE.Mesh(
                 new THREE.ConeGeometry(60, 160, 32),
                 clothesMaterial
             );
             body.position.set(800, -80, 0);
 
+            //右腕
             const arm_r = new THREE.Mesh(
                 //円柱のジオメトリー(上面半径,下面半径,高さ,円周分割数)
                 new THREE.CylinderGeometry(10, 10, 80, 30),
@@ -128,7 +130,9 @@
 
             );
             arm_r.position.set(800, -52, 0);
+            torus.rotation.set(0, 0, Math.PI / 2);
 
+            //左腕
             const arm_l = new THREE.Mesh(
                 //円柱のジオメトリー(上面半径,下面半径,高さ,円周分割数)
                 new THREE.CylinderGeometry(10, 10, 80, 30),
@@ -136,6 +140,7 @@
             );
             arm_l.position.set(800, 52, 0);
 
+            //右足
             const leg_r = new THREE.Mesh(
                 //円柱のジオメトリー(上面半径,下面半径,高さ,円周分割数)
                 new THREE.CylinderGeometry(10, 10, 80, 30),
@@ -143,6 +148,7 @@
             );
             leg_r.position.set(820, -200, 0);
 
+            //左足
             const leg_l = new THREE.Mesh(
                 //円柱のジオメトリー(上面半径,下面半径,高さ,円周分割数)
                 new THREE.CylinderGeometry(10, 10, 80, 30),
