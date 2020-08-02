@@ -19,7 +19,7 @@
             });
             renderer.setSize(width, height);
             // 光源が関係ないので
-            renderer.setClearColor(0x00aaff, 1.0);
+            renderer.setClearColor(0x0058ff, 1.0);
 
             // シーンを作成
             const scene = new THREE.Scene();
@@ -35,12 +35,6 @@
             const controls = new THREE.OrbitControls(camera);
             controls.autoRotate = true;
 
-            // helper
-            //const gridHelper = new THREE.GridHelper(1000, 20); // size, step
-            //scene.add(gridHelper);
-            //const axisHelper = new THREE.AxisHelper(1000); //軸の長さ　X：赤、Y：緑、z：青
-            //scene.add(axisHelper);
-
             // マテリアル1を作成する
             const material1 = new THREE.SpriteMaterial({
                 map: new THREE.TextureLoader().load('/image/star_y.png'), opacity: 1, transparent: true, depthTest: false
@@ -55,8 +49,6 @@
             // フォグ（霞）を有効にする
             material2.fog = true;
 
-            var oc = 1;
-            var i = 0;
             var pyp = 600;
             var pym = 300;
 
@@ -205,21 +197,6 @@
 
             }
 
-            function ps() {
-                if (oc == 1) {
-                    material2.opacity -= 0.001;
-                    if (material2.opacity <= 0) {
-                        oc = 0;
-                    }
-                } else {
-                    material2.opacity += 0.001;
-                    if (material2.opacity >= 1) {
-                        oc = 1;
-                    }
-                }
-                //material2.opacity -= 0.001;
-                return material2.opacity;
-            }
         }
     </script>
 </head>
