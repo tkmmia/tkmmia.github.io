@@ -43,14 +43,14 @@
 
             // マテリアル1を作成する
             const material1 = new THREE.SpriteMaterial({
-                map: new THREE.TextureLoader().load('/image/ar01_s.png'), opacity: 1, transparent: true, depthTest: false
+                map: new THREE.TextureLoader().load('/image/star_y.png'), opacity: 1, transparent: true, depthTest: false
             });
             // フォグ（霞）を有効にする
             material1.fog = true;
 
             // マテリアル2を作成する
             const material2 = new THREE.SpriteMaterial({
-                map: new THREE.TextureLoader().load('/image/bubble.png'), opacity: 1, transparent: true, depthTest: false/*, blending: THREE.AdditiveBlending*/
+                map: new THREE.TextureLoader().load('/image/kirakira.png'), opacity: 1, transparent: true, depthTest: false/*, blending: THREE.AdditiveBlending*/
             });
             // フォグ（霞）を有効にする
             material2.fog = true;
@@ -185,7 +185,7 @@
 
                 sphere.rotation.x += 0.01;
                 sphere.rotation.y += 0.01;
-                human.r.rotateY(0.01);
+                human.rotateY(0.01);
 
                 // レンダリング
                 renderer.render(scene, camera);
