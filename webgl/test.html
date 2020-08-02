@@ -59,7 +59,6 @@
             var i = 0;
             var pyp = 600;
             var pym = 300;
-            //sp2();
 
             function sp1() {
                 const sprite1 = new THREE.Sprite(material1);
@@ -69,7 +68,7 @@
                 sprite1.position.z = 3000 * (Math.random() - 0.5);
 
                 // 必要に応じてスケールを調整
-                sprite1.scale.set(50, 50, 50);
+                sprite1.scale.set(30, 30, 30);
 
                 scene.add(sprite1);
                 i++;
@@ -103,9 +102,9 @@
             scene.add(sphere);
 
 
-            //奥行きと影があり、光沢感のないマテリアル({ color: 0xから始まる16進数カラー})
+
             const bodyMaterial = new THREE.MeshLambertMaterial({ color: 0xf5deb3 })
-            const bodyMaterial2 = new THREE.MeshLambertMaterial({ color: 0xdc143c })
+            //const bodyMaterial2 = new THREE.MeshLambertMaterial({ color: 0xdc143c })
             const clothesMaterial = new THREE.MeshLambertMaterial({ color: 0xff4500 })
 
             //頭
@@ -124,9 +123,8 @@
 
             //右腕
             const arm_r = new THREE.Mesh(
-                //円柱のジオメトリー(上面半径,下面半径,高さ,円周分割数)
                 new THREE.CylinderGeometry(10, 10, 80, 30),
-                bodyMaterial2
+                bodyMaterial
 
             );
             arm_r.position.set(765, -75, 0);
@@ -134,7 +132,6 @@
 
             //左腕
             const arm_l = new THREE.Mesh(
-                //円柱のジオメトリー(上面半径,下面半径,高さ,円周分割数)
                 new THREE.CylinderGeometry(10, 10, 80, 30),
                 bodyMaterial
             );
@@ -143,7 +140,6 @@
 
             //右足
             const leg_r = new THREE.Mesh(
-                //円柱のジオメトリー(上面半径,下面半径,高さ,円周分割数)
                 new THREE.CylinderGeometry(10, 10, 80, 30),
                 bodyMaterial
             );
@@ -151,17 +147,15 @@
 
             //左足
             const leg_l = new THREE.Mesh(
-                //円柱のジオメトリー(上面半径,下面半径,高さ,円周分割数)
                 new THREE.CylinderGeometry(10, 10, 80, 30),
                 bodyMaterial
             );
             leg_l.position.set(780, -200, 0);
 
-            const human = new THREE.Group(); //メッシュをグループ化
+            const human = new THREE.Group();
             human.add(head, body, arm_l, arm_r, leg_r, leg_l);
             scene.add(human);
 
-            //光源はspriteのみならば不要！
             // 光源（環境光）
             const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
             scene.add(ambientLight);
@@ -176,7 +170,7 @@
             // 毎フレーム時に実行されるループイベントです
             function tick() {
 
-                if (count == 25) {
+                if (count == 20) {
 
                     sp2();
 
@@ -191,6 +185,7 @@
 
                 sphere.rotation.x += 0.01;
                 sphere.rotation.y += 0.01;
+                human.r.rotateY(0.01);
 
                 // レンダリング
                 renderer.render(scene, camera);
