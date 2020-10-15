@@ -8,9 +8,13 @@ body {
 
   }
   h2 {
-    margin: 80px 0 0 80px;
+    margin: 0 0 0 80px;
     text-align: center;
 
+  }
+
+  img {
+    width: 200px;  /* 横幅を200pxに */
   }
   
   
